@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pondok Unais - Report Analysis</title>
+    <link rel="stylesheet" href="css/Report_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <img src="placeholder_logo.png" alt="Pondok Unais Care Center Logo">
+                <span>PONDOK UNAIS CARE CENTER</span>
+            </div>
+            <nav class="sidebar-nav">
+    <ul>
+        <li class="nav-item">
+            <i class="fas fa-home"></i><a href="HomePage.html">Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <i class="fas fa-calendar-alt"></i><a href="Schedules.html">Schedules</a>
+        </li>
+        <li class="nav-item">
+            <i class="fas fa-box"></i><a href="Inventory.html">Inventory</a>
+        </li>
+        <li class="nav-item">
+            <i class="fas fa-envelope"></i><a href="Requests.html">Requests</a>
+        </li>
+        <li class="nav-item">
+            <i class="fas fa-file-invoice"></i><span>Billing</span>
+        </li>
+        <li class="nav-item active">
+            <i class="fas fa-chart-line"></i><a href="Report.html">Reports</a>
+        </li>
+        <li class="nav-item">
+            <i class="fas fa-cogs"></i><span>Settings</span>
+        </li>
+        <li class="nav-item logout-item">
+            <i class="fas fa-sign-out-alt"></i><a href="Login.html">Logout</a>
+        </li>
+    </ul>
+</nav>
+        </aside>
+
+        <div class="main-content">
+            <header class="main-header">
+                <h2 class="page-title">Report Analysis</h2>
+                <div class="header-actions">
+                    <button class="download-btn"><i class="fas fa-download"></i> Download</button>
+                    <button class="icon-button"><i class="fas fa-bell"></i></button>
+                    <button class="icon-button"><i class="fas fa-user-circle"></i></button>
+                </div>
+            </header>
+
+            <div class="report-container">
+                <div class="report-filters">
+                    <div class="filter-group-tabs">
+                        <button class="filter-tab active" data-filter-group="report-category" data-filter-value="general">General</button>
+                        <button class="filter-tab" data-filter-group="report-category" data-filter-value="maintenance">Maintenance</button>
+                        <button class="filter-tab" data-filter-group="report-category" data-filter-value="cost">Cost</button>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4>Date Range</h4>
+                        <div class="filter-buttons" data-filter-name="date-range">
+                            <button class="filter-button active" data-filter-value="30days">30 Days</button>
+                            <button class="filter-button" data-filter-value="15days">15 Days</button>
+                            <button class="filter-button" data-filter-value="7days">7 Days</button>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4>Type</h4>
+                        <div class="filter-buttons" data-filter-name="type">
+                            <button class="filter-button active" data-filter-value="all">All</button>
+                            <button class="filter-button" data-filter-value="asset">Asset</button>
+                            <button class="filter-button" data-filter-value="facilities">Facilities</button>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4>Status</h4>
+                        <div class="filter-buttons" data-filter-name="status">
+                            <button class="filter-button active" data-filter-value="all">All</button>
+                            <button class="filter-button" data-filter-value="good">Good</button>
+                            <button class="filter-button" data-filter-value="fair">Fair</button>
+                            <button class="filter-button" data-filter-value="damaged">Damaged</button>
+                        </div>
+                    </div>
+
+                    <div class="report-overview">
+                        <h3>General Report Overview <span class="report-duration">(Last 30 Days)</span></h3>
+                        <div class="chart-container">
+                            <div class="chart-item">
+                                <span class="chart-label">Medical Equipment</span>
+                                <div class="progress-bar-stack">
+                                    <div class="progress-segment good" style="width: 50%;"></div>
+                                    <div class="progress-segment fair" style="width: 30%;"></div>
+                                    <div class="progress-segment damaged" style="width: 20%;"></div>
+                                </div>
+                            </div>
+                            <div class="chart-item">
+                                <span class="chart-label">IT Equipment</span>
+                                <div class="progress-bar-stack">
+                                    <div class="progress-segment good" style="width: 60%;"></div>
+                                    <div class="progress-segment fair" style="width: 25%;"></div>
+                                    <div class="progress-segment damaged" style="width: 15%;"></div>
+                                </div>
+                            </div>
+                            <div class="chart-item">
+                                <span class="chart-label">Lab Systems</span>
+                                <div class="progress-bar-stack">
+                                    <div class="progress-segment good" style="width: 47%;"></div>
+                                    <div class="progress-segment fair" style="width: 33%;"></div>
+                                    <div class="progress-segment damaged" style="width: 20%;"></div>
+                                </div>
+                            </div>
+                            <div class="chart-item">
+                                <span class="chart-label">Office Furniture</span>
+                                <div class="progress-bar-stack">
+                                    <div class="progress-segment good" style="width: 87%;"></div>
+                                    <div class="progress-segment fair" style="width: 10%;"></div>
+                                    <div class="progress-segment damaged" style="width: 3%;"></div>
+                                </div>
+                            </div>
+                            <div class="chart-item">
+                                <span class="chart-label">Kitchen & Laundry Equipment</span>
+                                <div class="progress-bar-stack">
+                                    <div class="progress-segment good" style="width: 40%;"></div>
+                                    <div class="progress-segment fair" style="width: 30%;"></div>
+                                    <div class="progress-segment damaged" style="width: 30%;"></div>
+                                </div>
+                            </div>
+                            </div>
+                        <div class="chart-legend">
+                            <span class="legend-item"><span class="color-box good"></span>Good</span>
+                            <span class="legend-item"><span class="color-box fair"></span>Fair</span>
+                            <span class="legend-item"><span class="color-box damaged"></span>Damaged</span>
+                            <span class="legend-item"><span class="color-box action-required"></span>Action Required</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="report-details">
+                    <div class="report-table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Product-ID</th>
+                                    <th>Type</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Electric Profiling Bed</td>
+                                    <td>EPB-017</td>
+                                    <td>Asset</td>
+                                    <td class="status-good">Good</td>
+                                </tr>
+                                <tr>
+                                    <td>Patient Hoist</td>
+                                    <td>PH-004</td>
+                                    <td>Asset</td>
+                                    <td class="status-fair">Fair</td>
+                                </tr>
+                                <tr>
+                                    <td>Main Dining Hall</td>
+                                    <td>MDH-021</td>
+                                    <td>Facility</td>
+                                    <td class="status-good">Good</td>
+                                </tr>
+                                <tr>
+                                    <td>Wheelchair</td>
+                                    <td>WC-011</td>
+                                    <td>Asset</td>
+                                    <td class="status-damaged">Damaged</td>
+                                </tr>
+                                <tr>
+                                    <td>Physiotherapy Room</td>
+                                    <td>PT-008</td>
+                                    <td>Facility</td>
+                                    <td class="status-action-required">Action Required</td>
+                                </tr>
+                                <tr>
+                                    <td>Commercial Refrigerator</td>
+                                    <td>CR-025</td>
+                                    <td>Asset</td>
+                                    <td class="status-good">Good</td>
+                                </tr>
+                                <tr>
+                                    <td>Outdoor Garden Area</td>
+                                    <td>OGA-002</td>
+                                    <td>Facility</td>
+                                    <td class="status-action-required">Action Required</td>
+                                </tr>
+                                <tr>
+                                    <td>Blood Pressure Monitor</td>
+                                    <td>BPM-034</td>
+                                    <td>Asset</td>
+                                    <td class="status-fair">Fair</td>
+                                </tr>
+                                <tr>
+                                    <td>Nurses Station</td>
+                                    <td>NS-006</td>
+                                    <td>Facility</td>
+                                    <td class="status-good">Good</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

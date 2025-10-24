@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pondok Unais - Maintenance Requests</title>
+    <link rel="stylesheet" href="css/Requests_style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <img src="placeholder_logo.png" alt="Pondok Unais Care Center Logo">
+                <span>PONDOK UNAIS CARE CENTER</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item">
+                        <i class="fas fa-home"></i><a href="HomePage.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-calendar-alt"></i><a href="Schedules.html">Schedules</a>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-box"></i><a href="Inventory.html">Inventory</a>
+                    </li>
+                    <li class="nav-item active">
+                        <i class="fas fa-envelope"></i><a href="Requests.html">Requests</a>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-file-invoice"></i><span>Billing</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-chart-line"></i><a href="Report.html">Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-cogs"></i><span>Settings</span>
+                    </li>
+                    <li class="nav-item logout-item">
+                        <i class="fas fa-sign-out-alt"></i><a href="Login.html">Logout</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <div class="main-content">
+            <header class="main-header-requests">
+    <h2 class="page-title">Requests Overview</h2>
+    <div class="header-right">
+        <button class="add-request-btn" onclick="openRequestModal()">
+            <i class="fas fa-plus"></i> Create a Request
+        </button>
+        <button class="icon-button"><i class="fas fa-bell"></i></button>
+        <button class="icon-button"><i class="fas fa-user-circle"></i></button>
+    </div>
+</header>
+
+            <div class="requests-page-content">
+                <div class="request-table-section">
+                    <div class="table-controls">
+                        <div class="filter-tabs">
+                            <button class="tab active">All</button>
+                            <button class="tab">Maintenance</button>
+                            <button class="tab">Asset Repair</button>
+                            <button class="tab">Other</button>
+                        </div>
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search by item or location">
+                        </div>
+                    </div>
+
+                    <div class="request-table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Issue</th>
+                                    <th>Location</th>
+                                    <th>Date</th>
+                                    <th>Priority</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Leaking Faucet</td>
+                                    <td>Canteen, Hand Washing Area</td>
+                                    <td>2025-05-15</td>
+                                    <td class="priority-medium">Medium</td>
+                                    <td class="status-ongoing">Ongoing</td>
+                                </tr>
+                                <tr>
+                                    <td>Curtain Rails Adjustment</td>
+                                    <td>Common Area</td>
+                                    <td>2025-04-28</td>
+                                    <td class="priority-low">Low</td>
+                                    <td class="status-scheduled">Scheduled</td>
+                                </tr>
+                                <tr>
+                                    <td>Squeaking Door</td>
+                                    <td>Room 010, 1st Floor</td>
+                                    <td>2025-03-20</td>
+                                    <td class="priority-low">Low</td>
+                                    <td class="status-completed">Completed</td>
+                                </tr>
+                                <tr>
+                                    <td>Elevator Malfunction</td>
+                                    <td>West Wing, 3rd Floor</td>
+                                    <td>2025-03-10</td>
+                                    <td class="priority-high">High</td>
+                                    <td class="status-ongoing">Ongoing</td>
+                                </tr>
+                                <tr>
+                                    <td>Fan Cleaning</td>
+                                    <td>Room 202, Bedroom</td>
+                                    <td>2025-05-01</td>
+                                    <td class="priority-low">Low</td>
+                                    <td class="status-scheduled">Scheduled</td>
+                                </tr>
+                                <tr>
+                                    <td>Refrigerator Outage</td>
+                                    <td>Wet Kitchen</td>
+                                    <td>2025-05-22</td>
+                                    <td class="priority-medium">Medium</td>
+                                    <td class="status-completed">Completed</td>
+                                </tr>
+                                <tr>
+                                    <td>Light Bulb Replacement</td>
+                                    <td>Section 2, Library</td>
+                                    <td>2025-04-12</td>
+                                    <td class="priority-low">Low</td>
+                                    <td class="status-scheduled">Scheduled</td>
+                                </tr>
+                                <tr>
+                                    <td>Plumbing Issue</td>
+                                    <td>Room 221, Bathroom</td>
+                                    <td>2025-05-05</td>
+                                    <td class="priority-medium">Medium</td>
+                                    <td class="status-ongoing">Ongoing</td>
+                                </tr>
+                                <tr>
+                                    <td>Fan Cleaning</td>
+                                    <td>Room 103, Living Room</td>
+                                    <td>2025-05-28</td>
+                                    <td class="priority-low">Low</td>
+                                    <td class="status-scheduled">Scheduled</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="pagination">
+                        <button class="pagination-btn">Previous</button>
+                        <span>Page 1 of 10</span>
+                        <button class="pagination-btn">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="createRequestModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeRequestModal()">&times;</span>
+            <h2>Create New Request</h2>
+            <form class="request-form">
+                <div class="form-grid">
+                    <div class="form-group"><label for="issueSummary">Issue Summary</label><input type="text" id="issueSummary" placeholder="e.g., Leaking faucet in Canteen"></div>
+                    <div class="form-group"><label for="requestType">Request Type</label><select id="requestType"><option value="maintenance">Maintenance</option><option value="repair">Asset Repair</option><option value="other">Other</option></select></div>
+                    <div class="form-group"><label for="location">Location / Room No.</label><input type="text" id="location" placeholder="e.g., Canteen, Room 201"></div>
+                    <div class="form-group"><label for="assetID">Associated Asset ID (Optional)</label><input type="text" id="assetID" placeholder="e.g., EPB-017"></div>
+                    <div class="form-group"><label for="priority">Priority</label><select id="priority"><option value="low">Low</option><option value="medium">Medium</option><option value="high">High</option><option value="critical">Critical</option></select></div>
+                    <div class="form-group"><label for="dateRaised">Date Raised</label><input type="date" id="dateRaised"></div>
+                </div>
+                <div class="form-group full-width">
+                    <label for="details">Detailed Description</label>
+                    <textarea id="details" rows="4" placeholder="Describe the issue, when it started, and any observed symptoms."></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeRequestModal()">Cancel</button>
+                    <button type="submit" class="btn-primary">Submit Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

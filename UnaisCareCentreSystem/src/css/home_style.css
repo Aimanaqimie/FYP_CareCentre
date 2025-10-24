@@ -1,0 +1,257 @@
+/* Import Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Reusing general styles from inventory_style.css by linking it in HTML */
+/* This file will focus on dashboard-specific widgets */
+
+.page-content h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Flexible columns for cards */
+    gap: 30px; /* Space between cards */
+}
+
+/* Base Dashboard Card Style */
+.dashboard-card {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.dashboard-card.full-width {
+    grid-column: 1 / -1; /* Make it span all columns */
+}
+
+.dashboard-card h3 {
+    font-size: 20px;
+    color: #4a5d8c; /* Dark blue from inventory page */
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f2f5; /* Subtle separator */
+}
+
+/* Stat Cards (Active Patients, Upcoming Shifts, Urgent Tasks) */
+.stat-card {
+    flex-direction: row; /* Icon and info side-by-side */
+    align-items: center;
+    gap: 20px;
+}
+
+.stat-card .card-icon {
+    background-color: #e0f2f7; /* Light blue background */
+    color: #3f51b5; /* Dark blue icon */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    flex-shrink: 0;
+}
+
+.stat-card .card-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.stat-card .card-label {
+    font-size: 14px;
+    color: #6a7a9a;
+    margin-bottom: 2px;
+}
+
+.stat-card .card-value {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.stat-card .card-trend {
+    font-size: 13px;
+    color: #888;
+}
+
+.stat-card .text-green { color: #28a745; }
+.stat-card .text-blue { color: #007bff; }
+.stat-card .text-red { color: #dc3545; }
+
+
+/* Recent Activity List */
+.activity-list {
+    list-style: none;
+    padding: 0;
+}
+
+.activity-list li {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f2f5;
+    font-size: 15px;
+    color: #555;
+}
+
+.activity-list li:last-child {
+    border-bottom: none;
+}
+
+.activity-list li i {
+    color: #6a7a9a;
+    margin-right: 15px;
+    font-size: 16px;
+    width: 20px; /* Ensure consistent alignment */
+    text-align: center;
+}
+
+.activity-list .activity-time {
+    margin-left: auto;
+    font-size: 13px;
+    color: #999;
+}
+
+
+/* Upcoming Events */
+.event-list {
+    list-style: none;
+    padding: 0;
+}
+
+.event-list li {
+    display: flex;
+    align-items: flex-start; /* Align content to the top */
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f2f5;
+}
+
+.event-list li:last-child {
+    border-bottom: none;
+}
+
+.event-list .event-date {
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 8px 10px;
+    text-align: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.event-list .event-date .month {
+    display: block;
+    font-size: 10px;
+    font-weight: bold;
+    color: #6a7a9a;
+}
+
+.event-list .event-date .day {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    color: #3f51b5;
+    line-height: 1;
+}
+
+.event-list .event-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.event-list .event-details strong {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.event-list .event-details span {
+    font-size: 14px;
+    color: #666;
+}
+
+.event-list .event-details .time {
+    font-size: 13px;
+    color: #999;
+    margin-top: 5px;
+}
+
+
+/* Quick Actions */
+.quick-actions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for buttons */
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.action-btn {
+    background-color: #e0f2f7; /* Light blue from inventory_style */
+    color: #3f51b5; /* Dark blue text */
+    border: 1px solid #cceeff; /* Lighter blue border */
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+    text-align: center;
+}
+
+.action-btn i {
+    font-size: 18px;
+}
+
+.action-btn:hover {
+    background-color: #d0e8f0;
+    color: #303f9f;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive Adjustments for Dashboard Grid */
+@media (max-width: 992px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr; /* Stack all cards on smaller screens */
+    }
+    .stat-card {
+        flex-direction: column; /* Stack icon and info vertically */
+        text-align: center;
+        gap: 10px;
+    }
+    .stat-card .card-info {
+        align-items: center;
+    }
+    .quick-actions-grid {
+        grid-template-columns: 1fr; /* Single column for actions */
+    }
+}
+
+@media (max-width: 768px) {
+    .page-content {
+        padding: 20px;
+    }
+    .page-content h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .dashboard-grid {
+        gap: 20px;
+    }
+}

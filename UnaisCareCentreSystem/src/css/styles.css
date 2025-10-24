@@ -1,0 +1,181 @@
+/* Basic Reset and Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f2f7; /* Light blue background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Hide potential scrollbars if clouds go out of bounds */
+    position: relative;
+}
+
+/* Background Clouds (as seen in the image) */
+body::before,
+body::after {
+    content: '';
+    position: absolute;
+    background-color: #f0f8ff; /* Lighter cloud color */
+    border-radius: 50%;
+    filter: blur(20px); /* Soften the edges of the clouds */
+    opacity: 0.7;
+    z-index: 0; /* Keep behind the login container */
+}
+
+/* Specific cloud positioning (adjust as needed for exact replication) */
+body::before { /* Large bottom-left cloud */
+    width: 600px;
+    height: 600px;
+    bottom: -300px;
+    left: -300px;
+}
+
+body::after { /* Smaller top-right cloud */
+    width: 400px;
+    height: 400px;
+    top: -200px;
+    right: -200px;
+}
+
+/* Additional smaller clouds (optional, can be added with more pseudo-elements or div) */
+.cloud-small-1 {
+    position: absolute;
+    background-color: #f0f8ff;
+    border-radius: 50%;
+    filter: blur(15px);
+    opacity: 0.6;
+    width: 150px;
+    height: 80px;
+    top: 15%;
+    left: 20%;
+    z-index: 0;
+}
+.cloud-small-2 {
+    position: absolute;
+    background-color: #f0f8ff;
+    border-radius: 50%;
+    filter: blur(15px);
+    opacity: 0.6;
+    width: 100px;
+    height: 60px;
+    top: 30%;
+    right: 25%;
+    z-index: 0;
+}
+
+
+/* Login Container */
+.login-container {
+    background-color: #ffffff; /* White background for the form */
+    padding: 50px 40px; /* More padding */
+    border-radius: 20px; /* More rounded corners */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Softer, larger shadow */
+    width: 100%;
+    max-width: 400px; /* Slightly wider */
+    text-align: center;
+    position: relative; /* To position elements relative to container if needed */
+    z-index: 1; /* Bring to front of clouds */
+}
+
+h1 {
+    color: #4a5d8c; /* Darker blue for the "Login" text */
+    margin-bottom: 40px;
+    font-size: 32px; /* Larger font size */
+    font-weight: bold; /* Bold text */
+    /* No border-bottom as in the image */
+}
+
+/* Input Group Styling */
+.input-group {
+    margin-bottom: 25px; /* More space between input groups */
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px; /* More space between label and input */
+    font-weight: normal; /* Labels are not bold in the image */
+    color: #6a7a9a; /* Softer color for labels */
+    font-size: 16px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px; /* More padding inside inputs */
+    border: none; /* No border for inputs */
+    border-radius: 10px; /* Rounded input fields */
+    background-color: #eef2f8; /* Light gray background for inputs */
+    box-sizing: border-box;
+    font-size: 17px;
+    color: #333;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus {
+    background-color: #e0e5ed; /* Slightly darker on focus */
+    box-shadow: 0 0 0 3px rgba(106, 122, 154, 0.3); /* Soft blue glow on focus */
+    outline: none;
+}
+
+/* Login Button Styling */
+.login-btn {
+    width: 100%;
+    background-color: #6a7a9a; /* Muted blue for the button */
+    color: white;
+    padding: 16px 20px; /* More padding */
+    margin-top: 30px; /* More space above the button */
+    border: none;
+    border-radius: 10px; /* Rounded button */
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.5px; /* Slight letter spacing */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-btn:hover {
+    background-color: #556585; /* Slightly darker on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Forgot Password Link Styling (keeping similar to original, though not explicitly in the image) */
+.forgot-password {
+    margin-top: 25px;
+    font-size: 15px;
+}
+
+.forgot-password a {
+    color: #6a7a9a; /* Matching the overall muted blue palette */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.forgot-password a:hover {
+    color: #4a5d8c;
+    text-decoration: underline;
+}
+
+/* For the top-left back arrow, you would typically use an icon library (e.g., FontAwesome) or an SVG.
+   For demonstration, I'll create a simple circle placeholder. */
+.back-arrow {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #6a7a9a; /* Muted blue arrow color */
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 10; /* Ensure it's on top */
+}
+
+.back-arrow:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}

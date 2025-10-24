@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pondok Unais - Inventory</title>
+    <link rel="stylesheet" href="css/Inventory_style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <img src="placeholder_logo.png" alt="Pondok Unais Care Center Logo">
+                <span>PONDOK UNAIS CARE CENTER</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item">
+                        <i class="fas fa-home"></i><a href="HomePage.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-calendar-alt"></i><a href="Schedules.html">Schedules</a>
+                    </li>
+                    <li class="nav-item active">
+                        <i class="fas fa-box"></i><a href="Inventory.html">Inventory</a>
+                    </li>
+                    <li class="nav-item">
+            <i class="fas fa-envelope"></i><a href="Requests.html">Requests</a>
+        </li>
+                    <li class="nav-item">
+                        <i class="fas fa-file-invoice"></i><span>Billing</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-chart-line"></i><a href="Report.html">Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-cogs"></i><span>Settings</span>
+                    </li>
+                    <li class="nav-item logout-item">
+                        <i class="fas fa-sign-out-alt"></i><a href="Login.html">Logout</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <div class="main-content">
+            <header class="main-header">
+                <h2 class="page-title">Overall Inventory</h2>
+                <div class="header-right">
+                    <button class="icon-button"><i class="fas fa-bell"></i></button>
+                    <button class="icon-button"><i class="fas fa-user-circle"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                <div class="summary-cards">
+                    <div class="summary-card">
+                        <span class="card-label">Total Inventory Items</span>
+                        <span class="card-value">542</span>
+                        <span class="card-trend">Last 7 days</span>
+                    </div>
+                    <div class="summary-card">
+                        <span class="card-label">Total Estimated Value</span>
+                        <span class="card-value">MYR 1,250,000</span>
+                        <span class="card-trend">Last 7 days</span>
+                    </div>
+                    <div class="summary-card">
+                        <span class="card-label">Items Requiring Action</span>
+                        <span class="card-value">18</span>
+                        <span class="card-trend text-red">Action Required</span>
+                    </div>
+                    <div class="summary-card status-card-visual">
+                        <span class="card-label">Status</span>
+                        <div class="status-indicator-bar">
+                            <div class="status-segment status-good" style="width: 40%;"></div>
+                            <div class="status-segment status-fair" style="width: 30%;"></div>
+                            <div class="status-segment status-damaged" style="width: 30%;"></div>
+                        </div>
+                        <div class="status-indicators-legend">
+                            <span class="status-item good"></span><span class="status-text">Good</span>
+                            <span class="status-item fair"></span><span class="status-text">Fair</span>
+                            <span class="status-item damaged"></span><span class="status-text">Damaged</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inventory-table-section">
+                    <div class="table-controls-new">
+                        <div class="filter-tabs-group">
+                            <button class="tab active">All</button>
+                            <button class="tab">Assets</button>
+                            <button class="tab">Facilities</button>
+                        </div>
+                        <div class="search-and-actions-group">
+                            <div class="search-box-new">
+                                <i class="fas fa-search"></i>
+                                <input type="text" placeholder="Search">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-actions">
+                        <button class="add-product-btn" onclick="openModal()"><i class="fas fa-plus"></i> Add Product</button>
+                        <button class="download-all-btn"><i class="fas fa-download"></i> Download all</button>
+                    </div>
+
+                    <div class="inventory-table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Product-ID</th>
+                                    <th>Type</th>
+                                    <th>Status</th>
+                                    <th>Last Maintained</th>
+                                    <th>Next Maintenance Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Electric Profiling Bed</td><td>EPB-017</td><td>Asset</td><td class="status-good">Good</td><td>2025-05-15</td><td>2025-08-15</td></tr>
+                                <tr><td>Patient Hoist</td><td>PH-004</td><td>Asset</td><td class="status-fair">Fair</td><td>2025-04-28</td><td>2025-07-28</td></tr>
+                                <tr><td>Main Dining Hall</td><td>MDH-021</td><td>Facility</td><td class="status-good">Good</td><td>2025-05-20</td><td>2025-08-20</td></tr>
+                                <tr><td>Wheelchair</td><td>WC-011</td><td>Asset</td><td class="status-damaged">Damaged</td><td>2025-03-10</td><td>2025-06-05 <span class="urgent-tag">(Urgent)</span></td></tr>
+                                <tr><td>Physiotherapy Room</td><td>PT-008</td><td>Facility</td><td class="status-action-required">Action Required</td><td>2025-05-01</td><td>2025-06-30</td></tr>
+                                <tr><td>Commercial Refrigerator</td><td>CR-025</td><td>Asset</td><td class="status-good">Good</td><td>2025-05-22</td><td>2025-08-22</td></tr>
+                                <tr><td>Outdoor Garden Area</td><td>OGA-002</td><td>Facility</td><td class="status-action-required">Action Required</td><td>2025-04-12</td><td>2025-07-12</td></tr>
+                                <tr><td>Blood Pressure Monitor</td><td>BPM-014</td><td>Asset</td><td class="status-fair">Fair</td><td>2025-05-05</td><td>2025-07-05</td></tr>
+                                <tr><td>Nurses Station</td><td>NS-006</td><td>Facility</td><td class="status-good">Good</td><td>2025-05-28</td><td>2025-11-28</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="pagination">
+                        <button class="pagination-btn">Previous</button>
+                        <span>Page 1 of 10</span>
+                        <button class="pagination-btn">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="addProductModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <div class="modal-header-container">
+                <h2>New Product</h2>
+            </div>
+            <form class="product-form">
+                <div class="form-group image-upload-group">
+                    <div class="image-drag-area">
+                        <p>Drag image here</p>
+                        <a href="#" id="browseImageLink">Browse Image</a>
+                        <input type="file" id="productImage" accept="image/*" style="display: none;">
+                    </div>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group"><label for="productName">Product Name</label><input type="text" id="productName" placeholder="Enter name"></div>
+                    <div class="form-group"><label for="productId">Product ID</label><input type="text" id="productId" placeholder="Auto-generate or enter ID"></div>
+                    <div class="form-group"><label for="type">Type</label><select id="type"><option value="" disabled selected>Select type</option><option value="Asset">Asset</option><option value="Facility">Facility</option></select></div>
+                    <div class="form-group"><label for="dateRegistration">Date of Registration</label><input type="date" id="dateRegistration"></div>
+                    <div class="form-group"><label for="maintenanceFrequency">Maintenance Frequency</label><input type="text" id="maintenanceFrequency" placeholder="e.g., Quarterly, Annually"></div>
+                    <div class="form-group"><label for="assignedTo">Assigned to</label><input type="text" id="assignedTo" placeholder="Patient, Room, or Staff"></div>
+                    <div class="form-group"><label for="lastInspectionDate">Last Inspection Date</label><input type="date" id="lastInspectionDate"></div>
+                    <div class="form-group"><label for="nextInspectionDate">Next Inspection Due Date</label><input type="date" id="nextInspectionDate"></div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeModal()">Discard</button>
+                    <button type="submit" class="btn-primary">Add Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
