@@ -8,10 +8,13 @@ This project is an Inventory Management System designed to help users manage pro
 inventory-management-system
 ├── src
 │   ├── HomePage.html
-│   ├── products.html
-│   ├── stock.html
-│   ├── orders.html
-│   ├── reports.html
+│   ├── Schedules.html
+│   ├── Inventory.html
+│   ├── Requests.html
+│   ├── Billing.html
+│   ├── Report.html
+│   ├── Settings.html
+│   ├── Login.html
 │   ├── css
 │   │   └── styles.css
 │   └── js
