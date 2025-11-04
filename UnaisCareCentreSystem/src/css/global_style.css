@@ -1,0 +1,237 @@
+/* ================================================= */
+/* --- GLOBAL STYLES (Linked to ALL HTML pages) --- */
+/* --- Handles: Layout, Sidebar, Header, Typography --- */
+/* ================================================= */
+
+/* --- GLOBAL RESET & BASE STYLES --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* Ensure a consistent font across the application */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- DASHBOARD LAYOUT STRUCTURE --- */
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- Main Content Area --- */
+.main-content {
+    background-color: #f7f9fc; /* Light background for the main area */
+    padding: 20px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.page-content {
+    padding: 0;
+    background-color: transparent;
+}
+
+/* ================================================= */
+/* --- SIDEBAR STYLES --- */
+/* ================================================= */
+
+.sidebar {
+    width: 250px;
+    background-color: #3f51b5; /* Primary Blue color */
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    padding: 0 20px 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.sidebar-logo img {
+    /* Placeholder styles for a logo image */
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.sidebar-logo span {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.sidebar-nav ul {
+    padding: 0;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.nav-item:hover, .nav-item.active {
+    background-color: #344498; /* Slightly darker hover/active */
+    border-left: 5px solid #ffc107; /* Yellow accent bar */
+    padding-left: 15px; /* Adjust padding due to accent bar */
+}
+
+.nav-item i {
+    font-size: 16px;
+    width: 25px; /* Fixed width for icons */
+}
+
+.nav-item a, .nav-item span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.logout-item {
+    margin-top: auto; /* Pushes logout to the bottom */
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 10px;
+}
+
+/* ================================================= */
+/* --- HEADER STYLES --- */
+/* ================================================= */
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.page-title {
+    font-size: 22px;
+    color: #333;
+    font-weight: 600;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    color: #6a7a9a;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.icon-button:hover {
+    color: #3f51b5;
+}
+
+/* Default Primary Button Style (Used for 'New Request', 'Add Product', etc.) */
+.add-product-btn {
+    background-color: #ffc107; /* Primary accent yellow */
+    color: #333;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.add-product-btn:hover {
+    background-color: #e6b300;
+}
+
+/* ================================================= */
+/* --- UTILITY CLASSES (Shared colors for status/trend) --- */
+/* ================================================= */
+
+.text-red, .status-overdue-text, .status-maintenance-text { 
+    color: #dc3545 !important; 
+}
+.text-green, .status-paid-text, .status-completed-text { 
+    color: #28a745 !important; 
+}
+.text-blue, .status-progress-text {
+    color: #3f51b5 !important;
+}
+.status-pending-text {
+    color: #ffc107 !important;
+}
+
+/* ================================================= */
+/* --- RESPONSIVE LAYOUT (Global adjustments) --- */
+/* ================================================= */
+
+@media (max-width: 900px) {
+    /* On smaller screens, hide the full sidebar */
+    .sidebar {
+        width: 60px; /* Mini-sidebar */
+    }
+    .sidebar-logo span,
+    .nav-item span {
+        display: none;
+    }
+    .sidebar-logo {
+        padding: 0 10px 20px;
+        justify-content: center;
+    }
+    .sidebar-logo img {
+        margin: 0;
+    }
+    .nav-item {
+        justify-content: center;
+        padding: 12px 0;
+    }
+    .nav-item:hover, .nav-item.active {
+        padding-left: 0;
+        border-left: 5px solid #ffc107;
+    }
+    .nav-item i {
+        width: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-header {
+        flex-wrap: wrap;
+        padding: 10px 15px;
+    }
+    .page-title {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .header-right {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
