@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pondok Unais - Maintenance Requests</title>
-    <link rel="stylesheet" href="css/Requests_style.css"> 
+    <title>Pondok Unais - Requests</title>
+    <link rel="stylesheet" href="css/global_style.css"> 
+    <link rel="stylesheet" href="css/requests_style.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -26,10 +27,10 @@
                         <i class="fas fa-box"></i><a href="Inventory.html">Inventory</a>
                     </li>
                     <li class="nav-item active">
-                        <i class="fas fa-envelope"></i><a href="Requests.html">Requests</a>
+                        <i class="fas fa-envelope"></i><span>Requests</span>
                     </li>
                     <li class="nav-item">
-                        <i class="fas fa-file-invoice"></i><span>Billing</span>
+                        <i class="fas fa-file-invoice"></i><a href="Billing.html">Billing</a>
                     </li>
                     <li class="nav-item">
                         <i class="fas fa-chart-line"></i><a href="Report.html">Reports</a>
@@ -45,106 +46,104 @@
         </aside>
 
         <div class="main-content">
-            <header class="main-header-requests">
-    <h2 class="page-title">Requests Overview</h2>
-    <div class="header-right">
-        <button class="add-request-btn" onclick="openRequestModal()">
-            <i class="fas fa-plus"></i> Create a Request
-        </button>
-        <button class="icon-button"><i class="fas fa-bell"></i></button>
-        <button class="icon-button"><i class="fas fa-user-circle"></i></button>
-    </div>
-</header>
+            <header class="main-header">
+                <h2 class="page-title">Service & Supply Requests</h2>
+                <div class="header-right">
+                    <button class="add-product-btn">
+                        <i class="fas fa-plus"></i> New Request
+                    </button>
+                    <button class="icon-button"><i class="fas fa-bell"></i></button>
+                    <button class="icon-button"><i class="fas fa-user-circle"></i></button>
+                </div>
+            </header>
 
-            <div class="requests-page-content">
-                <div class="request-table-section">
+            <div class="page-content">
+                
+                <div class="summary-cards">
+                    <div class="summary-card">
+                        <span class="card-label">Requests Open Today</span>
+                        <span class="card-value">5</span>
+                        <span class="card-trend text-blue">1 new since morning</span>
+                    </div>
+                    <div class="summary-card">
+                        <span class="card-label">High Priority Tasks</span>
+                        <span class="card-value text-red">3</span>
+                        <span class="card-trend text-red">Awaiting Staff Assignment</span>
+                    </div>
+                    <div class="summary-card">
+                        <span class="card-label">Average Completion Time</span>
+                        <span class="card-value">2.5 hours</span>
+                        <span class="card-trend text-green">Target: 3 hours</span>
+                    </div>
+                    <div class="summary-card">
+                        <span class="card-label">Completed This Week</span>
+                        <span class="card-value">22</span>
+                        <span class="card-trend text-green">Maintenance and Supply</span>
+                    </div>
+                </div>
+
+                <div class="requests-table-section">
+                    <h3>Active Requests Log</h3>
+                    
                     <div class="table-controls">
-                        <div class="filter-tabs">
+                        <div class="filter-tabs-group">
                             <button class="tab active">All</button>
-                            <button class="tab">Maintenance</button>
-                            <button class="tab">Asset Repair</button>
-                            <button class="tab">Other</button>
+                            <button class="tab status-pending-btn">Pending</button>
+                            <button class="tab status-in-progress-btn">In Progress</button>
+                            <button class="tab status-maintenance-btn">Maintenance</button>
                         </div>
-                        <div class="search-box">
-                            <i class="fas fa-search"></i>
-                            <input type="text" placeholder="Search by item or location">
+                        <div class="search-and-actions-group">
+                            <div class="search-box">
+                                <i class="fas fa-search"></i>
+                                <input type="text" placeholder="Search request ID or description">
+                            </div>
                         </div>
                     </div>
 
-                    <div class="request-table-wrapper">
+                    <div class="requests-table-wrapper">
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Issue</th>
-                                    <th>Location</th>
-                                    <th>Date</th>
-                                    <th>Priority</th>
+                                    <th>Req ID</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Resident/Room</th>
+                                    <th>Time Submitted</th>
+                                    <th>Assigned Staff</th>
                                     <th>Status</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Leaking Faucet</td>
-                                    <td>Canteen, Hand Washing Area</td>
-                                    <td>2025-05-15</td>
-                                    <td class="priority-medium">Medium</td>
-                                    <td class="status-ongoing">Ongoing</td>
+                                    <td>R-0125</td>
+                                    <td>Medical Supply</td>
+                                    <td>Request for new syringe stock</td>
+                                    <td>Station A</td>
+                                    <td>8:05 AM</td>
+                                    <td>None</td>
+                                    <td class="status-pending-text">Pending</td>
+                                    <td><button class="action-link"><i class="fas fa-user-plus"></i> Assign</button></td>
                                 </tr>
                                 <tr>
-                                    <td>Curtain Rails Adjustment</td>
-                                    <td>Common Area</td>
-                                    <td>2025-04-28</td>
-                                    <td class="priority-low">Low</td>
-                                    <td class="status-scheduled">Scheduled</td>
+                                    <td>R-0126</td>
+                                    <td>Maintenance</td>
+                                    <td>Leaking faucet in Room 201</td>
+                                    <td>Room 201</td>
+                                    <td>9:15 AM</td>
+                                    <td>Encik Azmi</td>
+                                    <td class="status-progress-text">In Progress</td>
+                                    <td><button class="action-link"><i class="fas fa-clipboard-check"></i> Complete</button></td>
                                 </tr>
                                 <tr>
-                                    <td>Squeaking Door</td>
-                                    <td>Room 010, 1st Floor</td>
-                                    <td>2025-03-20</td>
-                                    <td class="priority-low">Low</td>
-                                    <td class="status-completed">Completed</td>
-                                </tr>
-                                <tr>
-                                    <td>Elevator Malfunction</td>
-                                    <td>West Wing, 3rd Floor</td>
-                                    <td>2025-03-10</td>
-                                    <td class="priority-high">High</td>
-                                    <td class="status-ongoing">Ongoing</td>
-                                </tr>
-                                <tr>
-                                    <td>Fan Cleaning</td>
-                                    <td>Room 202, Bedroom</td>
-                                    <td>2025-05-01</td>
-                                    <td class="priority-low">Low</td>
-                                    <td class="status-scheduled">Scheduled</td>
-                                </tr>
-                                <tr>
-                                    <td>Refrigerator Outage</td>
-                                    <td>Wet Kitchen</td>
-                                    <td>2025-05-22</td>
-                                    <td class="priority-medium">Medium</td>
-                                    <td class="status-completed">Completed</td>
-                                </tr>
-                                <tr>
-                                    <td>Light Bulb Replacement</td>
-                                    <td>Section 2, Library</td>
-                                    <td>2025-04-12</td>
-                                    <td class="priority-low">Low</td>
-                                    <td class="status-scheduled">Scheduled</td>
-                                </tr>
-                                <tr>
-                                    <td>Plumbing Issue</td>
-                                    <td>Room 221, Bathroom</td>
-                                    <td>2025-05-05</td>
-                                    <td class="priority-medium">Medium</td>
-                                    <td class="status-ongoing">Ongoing</td>
-                                </tr>
-                                <tr>
-                                    <td>Fan Cleaning</td>
-                                    <td>Room 103, Living Room</td>
-                                    <td>2025-05-28</td>
-                                    <td class="priority-low">Low</td>
-                                    <td class="status-scheduled">Scheduled</td>
+                                    <td>R-0127</td>
+                                    <td>Care Assist</td>
+                                    <td>Resident R-00123 needs assistance</td>
+                                    <td>Room 305</td>
+                                    <td>9:45 AM</td>
+                                    <td>Staff B</td>
+                                    <td class="status-completed-text">Completed</td>
+                                    <td><button class="action-link"><i class="fas fa-history"></i> Review</button></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -152,38 +151,14 @@
 
                     <div class="pagination">
                         <button class="pagination-btn">Previous</button>
-                        <span>Page 1 of 10</span>
+                        <span>Page 1 of 4</span>
                         <button class="pagination-btn">Next</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <div id="createRequestModal" class="modal">
-        <div class="modal-content">
-            <span class="close-button" onclick="closeRequestModal()">&times;</span>
-            <h2>Create New Request</h2>
-            <form class="request-form">
-                <div class="form-grid">
-                    <div class="form-group"><label for="issueSummary">Issue Summary</label><input type="text" id="issueSummary" placeholder="e.g., Leaking faucet in Canteen"></div>
-                    <div class="form-group"><label for="requestType">Request Type</label><select id="requestType"><option value="maintenance">Maintenance</option><option value="repair">Asset Repair</option><option value="other">Other</option></select></div>
-                    <div class="form-group"><label for="location">Location / Room No.</label><input type="text" id="location" placeholder="e.g., Canteen, Room 201"></div>
-                    <div class="form-group"><label for="assetID">Associated Asset ID (Optional)</label><input type="text" id="assetID" placeholder="e.g., EPB-017"></div>
-                    <div class="form-group"><label for="priority">Priority</label><select id="priority"><option value="low">Low</option><option value="medium">Medium</option><option value="high">High</option><option value="critical">Critical</option></select></div>
-                    <div class="form-group"><label for="dateRaised">Date Raised</label><input type="date" id="dateRaised"></div>
-                </div>
-                <div class="form-group full-width">
-                    <label for="details">Detailed Description</label>
-                    <textarea id="details" rows="4" placeholder="Describe the issue, when it started, and any observed symptoms."></textarea>
-                </div>
-                <div class="form-actions">
-                    <button type="button" class="btn-secondary" onclick="closeRequestModal()">Cancel</button>
-                    <button type="submit" class="btn-primary">Submit Request</button>
-                </div>
-            </form>
-        </div>
-    </div>
-    <script src="js/main.js"></script>
+    <script src="js/global_app.js"></script>
+    <script src="js/requestTracker.js"></script>
 </body>
 </html>
