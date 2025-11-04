@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pondok Unais - Billing</title>
+    <link rel="stylesheet" href="css/global_style.css"> 
+    <link rel="stylesheet" href="css/billing_style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <img src="placeholder_logo.png" alt="Pondok Unais Care Center Logo">
+                <span>PONDOK UNAIS CARE CENTER</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item">
+                        <i class="fas fa-home"></i><a href="HomePage.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-calendar-alt"></i><a href="Schedules.html">Schedules</a>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-box"></i><a href="Inventory.html">Inventory</a>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-envelope"></i><a href="Requests.html">Requests</a>
+                    </li>
+                    <li class="nav-item active">
+                        <i class="fas fa-file-invoice"></i><span>Billing</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-chart-line"></i><a href="Report.html">Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-cogs"></i><span>Settings</span>
+                    </li>
+                    <li class="nav-item logout-item">
+                        <i class="fas fa-sign-out-alt"></i><a href="Login.html">Logout</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <div class="main-content">
+            <header class="main-header">
+                <h2 class="page-title">Billing & Financial Overview</h2>
+                <div class="header-right">
+                    <button class="add-product-btn">
+                        <i class="fas fa-file-invoice-dollar"></i> Generate Invoice
+                    </button>
+                    <button class="icon-button"><i class="fas fa-bell"></i></button>
+                    <button class="icon-button"><i class="fas fa-user-circle"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+                <div class="summary-cards">
+                    <div class="summary-card">
+                        <span class="card-label">Total Revenue (MTD)</span>
+                        <span class="card-value">MYR 15,200</span>
+                        <span class="card-trend text-green"><i class="fas fa-caret-up"></i> 10% vs last month</span>
+                    </div>
+                    <div class="summary-card">
+                        <span class="card-label">Outstanding Balances</span>
+                        <span class="card-value text-red">MYR 4,850</span>
+                        <span class="card-trend text-red">3 clients overdue</span>
+                    </div>
+                    <div class="summary-card">
+                        <span class="card-label">Total Paid Invoices</span>
+                        <span class="card-value">120</span>
+                        <span class="card-trend text-blue">YTD total</span>
+                    </div>
+                    <div class="summary-card">
+                        <span class="card-label">Next Billing Date</span>
+                        <span class="card-value">2025-12-01</span>
+                        <span class="card-trend text-green">Auto-Generate</span>
+                    </div>
+                </div>
+
+                <div class="billing-table-section">
+                    <h3>Invoice Transactions</h3>
+                    
+                    <div class="table-controls">
+                        <div class="filter-tabs-group">
+                            <button class="tab active">All</button>
+                            <button class="tab status-paid-btn">Paid</button>
+                            <button class="tab status-pending-btn">Pending</button>
+                            <button class="tab status-overdue-btn">Overdue</button>
+                        </div>
+                        <div class="search-and-actions-group">
+                            <div class="search-box">
+                                <i class="fas fa-search"></i>
+                                <input type="text" placeholder="Search invoice ID or resident">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="billing-table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Invoice ID</th>
+                                    <th>Resident Name</th>
+                                    <th>Issue Date</th>
+                                    <th>Due Date</th>
+                                    <th>Amount (MYR)</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>INV-001007</td>
+                                    <td>Ms. Siti A.</td>
+                                    <td>2025-10-15</td>
+                                    <td>2025-11-15</td>
+                                    <td>2,500.00</td>
+                                    <td class="status-pending-text">Pending</td>
+                                    <td><button class="action-link"><i class="fas fa-paper-plane"></i> Remind</button></td>
+                                </tr>
+                                <tr>
+                                    <td>INV-001006</td>
+                                    <td>Mr. Tan M. K.</td>
+                                    <td>2025-09-01</td>
+                                    <td>2025-10-01</td>
+                                    <td>1,200.00</td>
+                                    <td class="status-overdue-text">Overdue</td>
+                                    <td><button class="action-link"><i class="fas fa-exclamation-triangle"></i> Alert</button></td>
+                                </tr>
+                                <tr>
+                                    <td>INV-001005</td>
+                                    <td>Puan Zaleha B.</td>
+                                    <td>2025-10-01</td>
+                                    <td>2025-10-31</td>
+                                    <td>3,050.00</td>
+                                    <td class="status-paid-text">Paid</td>
+                                    <td><button class="action-link"><i class="fas fa-eye"></i> View</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="pagination">
+                        <button class="pagination-btn">Previous</button>
+                        <span>Page 1 of 12</span>
+                        <button class="pagination-btn">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/global_app.js"></script>
+    <script src="js/billingInvoices.js"></script>
+</body>
+</html>
