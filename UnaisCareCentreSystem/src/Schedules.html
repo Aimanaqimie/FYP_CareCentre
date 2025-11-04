@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pondok Unais - Schedules</title>
-    <link rel="stylesheet" href="css/Schedule_style.css"> 
+    <link rel="stylesheet" href="css/global_style.css"> 
+    <link rel="stylesheet" href="css/schedule_style.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -15,183 +16,139 @@
                 <span>PONDOK UNAIS CARE CENTER</span>
             </div>
             <nav class="sidebar-nav">
-    <ul>
-        <li class="nav-item">
-            <i class="fas fa-home"></i><a href="HomePage.html">Dashboard</a>
-        </li>
-        <li class="nav-item active">
-            <i class="fas fa-calendar-alt"></i><a href="Schedules.html">Schedules</a>
-        </li>
-        <li class="nav-item">
-            <i class="fas fa-box"></i><a href="Inventory.html">Inventory</a>
-        </li>
-        <li class="nav-item">
-            <i class="fas fa-envelope"></i><a href="Requests.html">Requests</a>
-        </li>
-        <li class="nav-item">
-            <i class="fas fa-file-invoice"></i><span>Billing</span>
-        </li>
-        <li class="nav-item">
-            <i class="fas fa-chart-line"></i><a href="Report.html">Reports</a>
-        </li>
-        <li class="nav-item">
-            <i class="fas fa-cogs"></i><span>Settings</span>
-        </li>
-        <li class="nav-item logout-item">
-            <i class="fas fa-sign-out-alt"></i><a href="Login.html">Logout</a>
-        </li>
-    </ul>
-</nav>
+                <ul>
+                    <li class="nav-item">
+                        <i class="fas fa-home"></i><a href="HomePage.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item active">
+                        <i class="fas fa-calendar-alt"></i><span>Schedules</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-box"></i><a href="Inventory.html">Inventory</a>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-envelope"></i><a href="Requests.html">Requests</a>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-file-invoice"></i><a href="Billing.html">Billing</a>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-chart-line"></i><a href="Report.html">Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-cogs"></i><span>Settings</span>
+                    </li>
+                    <li class="nav-item logout-item">
+                        <i class="fas fa-sign-out-alt"></i><a href="Login.html">Logout</a>
+                    </li>
+                </ul>
+            </nav>
         </aside>
 
         <div class="main-content">
-            <header class="main-header-schedule">
-                <h2 class="page-title">Schedules Overview</h2>
+            <header class="main-header">
+                <h2 class="page-title">Staff Schedules</h2>
                 <div class="header-right">
-                    <button class="icon-button"><i class="fas fa-calendar-plus"></i> Add Event</button>
+                    <button class="add-product-btn">
+                        <i class="fas fa-plus"></i> New Event/Shift
+                    </button>
                     <button class="icon-button"><i class="fas fa-bell"></i></button>
                     <button class="icon-button"><i class="fas fa-user-circle"></i></button>
                 </div>
             </header>
 
-            <div class="schedule-page-content">
+            <div class="page-content">
+                
                 <div class="summary-cards">
                     <div class="summary-card">
-                        <span class="card-label">Today's Appointments</span>
-                        <span class="card-value">12</span>
-                        <span class="card-trend text-blue">90% Completed</span>
-                    </div>
-                    <div class="summary-card">
-                        <span class="card-label">Upcoming Week's Events</span>
-                        <span class="card-value">56</span>
-                        <span class="card-trend text-green">10 New Schedules</span>
-                    </div>
-                    <div class="summary-card">
-                        <span class="card-label">Maintenance Due</span>
+                        <span class="card-label">Shifts Open This Week</span>
                         <span class="card-value text-red">3</span>
-                        <span class="card-trend">Critical Priority</span>
+                        <span class="card-trend text-red">Requires urgent filling</span>
                     </div>
                     <div class="summary-card">
-                        <span class="card-label">Staff Availability</span>
-                        <span class="card-value">95%</span>
-                        <span class="card-trend text-blue">Fully covered</span>
+                        <span class="card-label">Staff On Leave Today</span>
+                        <span class="card-value">2</span>
+                        <span class="card-trend text-blue">Check Coverage</span>
+                    </div>
+                    <div class="summary-card">
+                        <span class="card-label">Upcoming Training</span>
+                        <span class="card-value">First Aid</span>
+                        <span class="card-trend text-green">2025-11-15</span>
+                    </div>
+                    <div class="summary-card">
+                        <span class="card-label">Default View</span>
+                        <span class="card-value">Weekly</span>
+                        <span class="card-trend">Change settings</span>
                     </div>
                 </div>
 
-                <div class="schedule-flex-container">
-                    <div class="calendar-panel">
-                        <div class="calendar-header">
-                            <h3>June 2025</h3>
-                            <div class="calendar-nav">
-                                <button class="nav-arrow"><i class="fas fa-chevron-left"></i></button>
-                                <button class="nav-arrow"><i class="fas fa-chevron-right"></i></button>
-                            </div>
-                        </div>
-                        <div class="calendar-grid">
-                            <span class="day-label">Sun</span>
-                            <span class="day-label">Mon</span>
-                            <span class="day-label">Tue</span>
-                            <span class="day-label">Wed</span>
-                            <span class="day-label">Thu</span>
-                            <span class="day-label">Fri</span>
-                            <span class="day-label">Sat</span>
-
-                            <span class="day-cell old-month">30</span>
-                            <span class="day-cell">1</span>
-                            <span class="day-cell has-event">2</span>
-                            <span class="day-cell">3</span>
-                            <span class="day-cell has-event">4</span>
-                            <span class="day-cell">5</span>
-                            <span class="day-cell">6</span>
-                            <span class="day-cell">7</span>
-                            <span class="day-cell today has-event">8</span>
-                            <span class="day-cell">9</span>
-                            <span class="day-cell">10</span>
-                            <span class="day-cell">11</span>
-                            <span class="day-cell has-event">12</span>
-                            <span class="day-cell">13</span>
-                            <span class="day-cell">14</span>
-                            <span class="day-cell">15</span>
-                            <span class="day-cell">16</span>
-                            <span class="day-cell has-event">17</span>
-                            <span class="day-cell">18</span>
-                            <span class="day-cell has-event">19</span>
-                            <span class="day-cell">20</span>
-                            <span class="day-cell">21</span>
-                            <span class="day-cell">22</span>
-                            <span class="day-cell has-event">23</span>
-                            <span class="day-cell">24</span>
-                            <span class="day-cell">25</span>
-                            <span class="day-cell">26</span>
-                            <span class="day-cell has-event">27</span>
-                            <span class="day-cell">28</span>
-                            <span class="day-cell">29</span>
-                            <span class="day-cell">30</span>
-                            <span class="day-cell new-month">1</span>
-                            <span class="day-cell new-month">2</span>
-                            <span class="day-cell new-month">3</span>
+                <div class="schedule-calendar-container">
+                    
+                    <div class="calendar-header">
+                        <button class="nav-btn"><i class="fas fa-chevron-left"></i></button>
+                        <h3 class="current-period">Week of November 3 - 9, 2025</h3>
+                        <button class="nav-btn"><i class="fas fa-chevron-right"></i></button>
+                        
+                        <div class="view-controls">
+                             <button class="view-tab active">Week</button>
+                             <button class="view-tab">Day</button>
+                             <button class="view-tab">Month</button>
                         </div>
                     </div>
 
-                    <div class="upcoming-events-panel">
-                        <h3>Upcoming Appointments (Today)</h3>
-                        <div class="event-list">
-                            <div class="event-item">
-                                <div class="event-time">10:00 AM</div>
-                                <div class="event-details">
-                                    <p class="event-title">Dr. Ali Checkup - Room B2</p>
-                                    <span class="event-meta tag-patient">Patient Care</span>
-                                </div>
-                                <button class="event-action"><i class="fas fa-ellipsis-v"></i></button>
+                    <div class="schedule-grid">
+                        <div class="time-axis">
+                            <span>8:00 AM</span>
+                            <span>9:00 AM</span>
+                            <span>10:00 AM</span>
+                            <span>11:00 AM</span>
+                            <span>12:00 PM</span>
+                            <span>1:00 PM</span>
+                            <span>2:00 PM</span>
+                            <span>3:00 PM</span>
                             </div>
-                            <div class="event-item">
-                                <div class="event-time">11:30 AM</div>
-                                <div class="event-details">
-                                    <p class="event-title">Physiotherapy Session - Ms. Wong</p>
-                                    <span class="event-meta tag-treatment">Treatment</span>
-                                </div>
-                                <button class="event-action"><i class="fas fa-ellipsis-v"></i></button>
+                        <div class="day-columns">
+                            <div class="day-column">
+                                <div class="day-label">Mon 3/11</div>
+                                <div class="event staff-shift staff-blue" style="top: 100px; height: 120px;">Staff A - Morning Shift</div>
+                                <div class="event staff-shift staff-red" style="top: 250px; height: 80px;">Staff B - Mid Shift</div>
                             </div>
-                            <div class="event-item priority-maintenance">
-                                <div class="event-time">02:00 PM</div>
-                                <div class="event-details">
-                                    <p class="event-title">Generator Annual Maintenance</p>
-                                    <span class="event-meta tag-maintenance">Facility Maint.</span>
-                                </div>
-                                <button class="event-action"><i class="fas fa-ellipsis-v"></i></button>
+                            <div class="day-column">
+                                <div class="day-label">Tue 4/11</div>
+                                <div class="event staff-shift staff-green" style="top: 50px; height: 160px;">Staff C - Full Shift</div>
                             </div>
-                            <div class="event-item">
-                                <div class="event-time">03:30 PM</div>
-                                <div class="event-details">
-                                    <p class="event-title">Kitchen Stock Delivery</p>
-                                    <span class="event-meta tag-admin">Admin Task</span>
-                                </div>
-                                <button class="event-action"><i class="fas fa-ellipsis-v"></i></button>
+                             <div class="day-column">
+                                <div class="day-label">Wed 5/11</div>
                             </div>
-                            <div class="event-item">
-                                <div class="event-time">05:00 PM</div>
-                                <div class="event-details">
-                                    <p class="event-title">Family Visit - Mr. Lim</p>
-                                    <span class="event-meta tag-social">Social Event</span>
-                                </div>
-                                <button class="event-action"><i class="fas fa-ellipsis-v"></i></button>
+                             <div class="day-column">
+                                <div class="day-label">Thu 6/11</div>
+                                <div class="event resident-appt" style="top: 300px; height: 60px;">Resident D - Doctor</div>
                             </div>
-                            <div class="event-item priority-low">
-                                <div class="event-time">06:30 PM</div>
-                                <div class="event-details">
-                                    <p class="event-title">End-of-day Report Compilation</p>
-                                    <span class="event-meta tag-admin">Admin Task</span>
-                                </div>
-                                <button class="event-action"><i class="fas fa-ellipsis-v"></i></button>
+                             <div class="day-column">
+                                <div class="day-label">Fri 7/11</div>
+                                <div class="event staff-shift staff-blue" style="top: 20px; height: 180px;">Staff A - Day Shift</div>
+                            </div>
+                             <div class="day-column weekend">
+                                <div class="day-label">Sat 8/11</div>
+                            </div>
+                             <div class="day-column weekend">
+                                <div class="day-label">Sun 9/11</div>
                             </div>
                         </div>
-                        <button class="view-all-events-btn">View All Appointments <i class="fas fa-arrow-right"></i></button>
                     </div>
                 </div>
             </div>
+            <div id="newEventModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h3>Schedule New Event or Shift</h3>
+        <p>This is where your form for selecting staff, dates, and times will go.</p>
+        <button class="modal-submit-btn">Save Schedule</button>
+    </div>
+</div>
         </div>
     </div>
-
-    <script src="js/main.js"></script>
+    <script src="js/global_app.js"></script>
+    <script src="js/scheduleCalendar.js"></script>
 </body>
 </html>
